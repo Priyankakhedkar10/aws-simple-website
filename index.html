@@ -1,13 +1,148 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>aws-simple-website</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Portfolio App</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#f4f4f4;
+    }
+
+    .container{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+    }
+
+    .card{
+      background:white;
+      width:350px;
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .profile-img{
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      margin-bottom:20px;
+    }
+
+    h1{
+      color:#333;
+      margin-bottom:10px;
+    }
+
+    .role{
+      color:#0077ff;
+      font-weight:bold;
+      margin-bottom:15px;
+    }
+
+    .about{
+      color:#555;
+      line-height:1.5;
+      margin-bottom:20px;
+    }
+
+    .skills{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:20px;
+    }
+
+    .skills span{
+      background:#0077ff;
+      color:white;
+      padding:8px 12px;
+      border-radius:20px;
+      font-size:14px;
+    }
+
+    button{
+      padding:10px 20px;
+      border:none;
+      background:#0077ff;
+      color:white;
+      border-radius:8px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#005fd1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="root"></div>
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+
+    function App() {
+      return (
+        <div className="container">
+
+          <div className="card">
+
+            <img
+              src="https://avatars.githubusercontent.com/u/173941003?v=4"
+              alt="Profile"
+              className="profile-img"
+            />
+
+            <h1>Priyanka Khedkar</h1>
+
+            <p className="role">Frontend Developer</p>
+
+            <p className="about">
+              Passionate about creating responsive and modern web applications using React.
+            </p>
+
+            <div className="skills">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>React</span>
+            </div>
+
+            <button>Contact Me</button>
+
+          </div>
+
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+
+    root.render(<App />);
+
+  </script>
+
+</body>
 </html>
